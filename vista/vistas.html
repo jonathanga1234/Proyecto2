@@ -2,36 +2,36 @@
 <html>
 <head>
 <style>
-#div1 {
-    width: 350px;
-    height: 70px;
+#div1, #div2 , #div3{
+    float: left;
+    width: 200px;
+    height: 635px;
+    margin: 10px;
     padding: 10px;
-    border: 1px solid #aaaaaa;
+    border: 1px solid black;
 }
 </style>
 <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
 </script>
 </head>
 <body>
+<h2>ESTADO DE TAREAS</h2>
 
-<p>Drag the W3Schools image into the rectangle:</p>
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<h2>Ordenado</h2>
 <br>
-<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
 
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+</div>
+<h2>Iniciado</h2>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<h2>Terminado</h2>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<script src="./js/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript" src="js/java.js"></script>
 </body>
 </html>
