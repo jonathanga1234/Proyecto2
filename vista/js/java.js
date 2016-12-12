@@ -74,7 +74,6 @@ load_data();
 
 
 
-////
 });
 
   $( function() {
