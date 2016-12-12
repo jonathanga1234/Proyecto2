@@ -1,4 +1,4 @@
-var proyectos=[];
+var persona=[];
 
 var Persister = {
 	save: function (key, value) {
@@ -47,22 +47,19 @@ $('#campo3').click(function() {
 
 
 
-var animal = $('#animal').val();
-var nombre=$('#nombre').val();
-var icono=$('#icono').val();
-var fechainicio=$('#fechainicio').val();
-var numeropersonas=$('#numeropersonas').val();
+var nombre = $('#nombre').val();
+var avatar=$('#avatar').val();
 
 
 
 
-proyectos.push({
+
+
+persona.push({
 
 
 nombre : nombre,
-icono : icono,
-fechadeinicio :fechainicio,
-númerodepersonas:numeropersonas
+avatar : avatar
 
 
 
@@ -73,7 +70,7 @@ númerodepersonas:numeropersonas
 
 
 
-		Persister.saveObj('proyectos', proyectos);
+		Persister.saveObj('personas', persona);
 
 
 
@@ -84,7 +81,6 @@ númerodepersonas:numeropersonas
 
 
 
-proyectos.characters = []
 
 
 
@@ -102,12 +98,12 @@ proyectos.characters = []
 
 function load_data() {
 	
-	proyectos = Persister.loadObj('proyectos', "[]");
+	persona = Persister.loadObj('personas', "[]");
 
 
-	$('#proyectos').html('');
-	for (var i = 0; i < proyectos.length; i++) {
-		$('#proyectos').append('<li>' + proyectos[i].nombre + '</li>');
+	$('#persona').html('');
+	for (var i = 0; i < persona.length; i++) {
+		$('#persona').append('<li>' + persona[i].nombre + '</li>');
 	}
 }
 
@@ -122,7 +118,6 @@ load_data();
 
 
 
-debugger;
 
 
 ////
